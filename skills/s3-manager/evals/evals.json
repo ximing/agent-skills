@@ -1,0 +1,29 @@
+{
+  "skill_name": "s3-manager",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把 /tmp/sales-chart.png 上传到公开对象存储，路径放到 assets/charts/2026/ 下面，然后把最终可访问链接给我。环境变量都已经配好了。",
+      "expected_output": "Skill should use the public target, upload the file with the requested key prefix, and return a direct access URL plus the object location.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "列一下 private 桶 reports/2026/ 目录下有哪些文件，再帮我给 reports/2026/q1.pdf 生成一个预览链接，默认有效期就行。",
+      "expected_output": "Skill should use list plus url/stat style operations on the private target, surface object information, and return a presigned preview link for q1.pdf.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "把 public 桶 drafts/logo.svg 改名成 published/logo.svg，如果成功把新对象地址告诉我。环境变量已经设置好了。",
+      "expected_output": "Skill should use a move or rename operation within the public target and return the new object location.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "把 private 桶 reports/q1.pdf 复制到 public 桶 shared/reports/q1.pdf，然后返回新的访问链接。",
+      "expected_output": "Skill should copy across targets, preserve the source object, and return the destination access URL from the public target.",
+      "files": []
+    }
+  ]
+}
