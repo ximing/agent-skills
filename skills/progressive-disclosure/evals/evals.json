@@ -1,0 +1,23 @@
+{
+  "skill_name": "progressive-disclosure",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把这个仓库改成渐进式展开，让 Codex、Claude Code、Grok 和 Antigravity 都不要一启动就把所有目录规则读进来。",
+      "expected_output": "Skill restructures the target repo around AGENTS.md, root .agents/skills, Claude stubs, and short paired glob rules. It runs sync and audit, and does not leave a duplicate CLAUDE.md or GEMINI.md.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "检查一下当前项目的 CLAUDE.md 和 AGENTS.md 有没有重复加载，规则文件缺不缺 paths 或 trigger。先别改文件。",
+      "expected_output": "Skill runs audit only and reports loader violations without writing files.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我改了 packages/web/AGENTS.md 和 .agents/skills/deploy/SKILL.md，把 Claude 和 Antigravity 的镜像同步一下。",
+      "expected_output": "Skill runs sync so the Claude stub and the Antigravity model_decision mirror match those sources, then audits again.",
+      "files": []
+    }
+  ]
+}
